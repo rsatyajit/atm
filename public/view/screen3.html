@@ -1,0 +1,12 @@
+<div ng-init="checktransaction();" align = "center">
+	<div>SCREEN 2</div>
+	New Balance - {{ transaction.avaiable_bal }}
+	<br>
+	Notes:
+	<div ng-repeat="transaction in transaction.providedNotesDenomination">
+		{{ transaction.denomination}}  X  {{transaction.count}}
+	</div>
+	<div>
+		<button type="button" ng-click="home()">go to home page</button>
+	</div>
+</div>

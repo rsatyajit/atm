@@ -1,0 +1,29 @@
+<div align = "center" ng-init="checkcardno()">
+	<div>SCREEN 2</div>
+	<table border = "1px solid" cellspacing="0" cellpadding="0">
+		<tr>
+			<th>Serial no</th>
+			<th>Atm branch</th>
+			<th>denominations available(atm details)</th>
+			<th>Action</th>
+		</tr>
+		<tr ng-if = "atms.data.length == 0" >
+			<td style = "text-align:center" colspan="4">NO ATMS ADDED</td>
+		</tr>
+		<tr ng-if = "atms.data.length > 0" ng-repeat= "atm in atms.data">
+			<td>{{ $index+1 }}</td>
+			<td>{{ atm._id }}</td>
+			<td> 
+				<span ng-repeat = "deno in atm.datas">
+					{{ deno.denomination }} X {{ deno.count }}
+					&nbsp; 
+				<span> 
+			</td>
+			<td> <input type = "radio" name = "atm" id = "atm" ng-click="atms.selected_atm=atm._id"></td>
+		</tr>	
+	</table>
+	<div ng-if="atms.error" style = "color:red" >Please select atleast one atm</div>
+	<div>Amount : <input type = "number" ng-model = "atms.amount" name = "amount" id = "amount"></div>
+	<div ng-if="atms.amounterror" style = "color:red">{{ atms.amounterrorMsg }}</div>
+	<button type="button" ng-click = "screenThree();">Go to next screen</button>
+</div>

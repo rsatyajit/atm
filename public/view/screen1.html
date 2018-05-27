@@ -1,0 +1,24 @@
+<div align = "center" ng-init="clear()">
+	<div>SCREEN 1</div>
+	<table border = "1px solid" cellspacing="0" cellpadding="0">
+		<tr>
+			<th>Serial no</th>
+			<th>card number</th>
+			<th>amount available</th>
+			<th>Action</th>
+		</tr>
+		<tr ng-if = "cards.data.length == 0" >
+			<td style = "text-align:center" colspan="4">NO CARDS ADDED</td>
+		</tr>
+		<tr ng-if = "cards.data.length > 0" ng-repeat= "card in cards.data">
+			<td>{{ $index+1 }}</td>
+			<td>{{ card.card_number }}</td>
+			<td>{{ card.balance }}</td>
+			<td> <input type = "radio" name = "card" id = "card" ng-click="cards.selected_card_number=card.card_number"></td>
+		</tr>	
+	</table>
+	<div ng-if="cards.error" style = "color:red" >Please select atleast one card</div>
+	<div>PIN : <input type = "text" ng-model = "cards.pin" name = "pin" id = "pin"></div>
+	<div ng-if="cards.pinerror" style = "color:red">{{ cards.pinerrorMsg }}</div>
+	<button type="button" ng-click = "screenTwo();">Go to next screen</button>
+</div>
