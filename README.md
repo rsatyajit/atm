@@ -20,6 +20,7 @@ step 5: npm start / nodemon / node app.js
 
 step 6 : open browser hit => http://localhost:4000 the app will run
 
+step 7 : insert 1111 as pin for deafult card.
 
 apis to insert data in mongodb : 
 

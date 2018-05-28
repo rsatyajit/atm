@@ -5,12 +5,12 @@ mongoose.set('debug',true);
 
 /*credentials*/
 var MongoDBprotocol = 'mongodb';
-var Username = '';
-var Password = '';
+var Username = 'root';
+var Password = 'user123';
 var hostname = 'localhost';
 var Port = '27017';
 var dbName = 'atm';
-var authenticatedDb = '';
+var authenticatedDb = 'admin';
 
 
 //"mongodb://<username>:<password>@<host_name>:<port>/<dbname>?authSource=<auth_db>";
